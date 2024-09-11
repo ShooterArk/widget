@@ -9,10 +9,11 @@ class ReactWidget extends HTMLElement {
     // Create a shadow root for encapsulating styles
     const mountPoint = document.createElement('div');
     mountPoint.id = 'react-widget-container';
-    this.attachShadow({ mode: 'open' }).appendChild(mountPoint);
+    document.body.appendChild(mountPoint);
+    // this.attachShadow({ mode: 'open' }).appendChild(mountPoint);
 
     // Render the React widget inside the shadow DOM
-    const root = ReactDOM.createRoot(document.getElementById('react-widget-container') as HTMLElement);
+    const root = ReactDOM.createRoot(mountPoint);
     root.render(React.createElement(App));
     // ReactDOM.render(<App />, mountPoint);
   }
