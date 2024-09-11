@@ -18,7 +18,5 @@ class ReactWidget extends HTMLElement {
   }
 }
 
-customElements.define('react-widget', ReactWidget);
-
 // Register the custom element
 customElements.define('react-widget', ReactWidget);
