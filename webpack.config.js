@@ -3,7 +3,7 @@ const path = require('path');
 module.exports = {
   entry: './src/index.ts', // Entry point of your application
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'build'),
     filename: 'widget.js',
   },
   module: {
