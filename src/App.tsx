@@ -37,8 +37,7 @@ interface IMiniApp {
 const MiniApp: React.FC<IMiniApp> = ({ closeWidget }) => {
   return (
     <div style={overlayStyle}>
-    <button onClick={closeWidget} style={{ float: 'right', marginBottom: '10px' }}>
-      Close
+    <button onClick={closeWidget} style={closeButton}>
     </button>
     <div style={modalStyle}>
       <h2>Welcome to the Mini App 2!</h2>
@@ -73,6 +72,16 @@ const modalStyle: React.CSSProperties = {
   boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.2)',
   borderRadius: '10px',
   position: 'relative',
+};
+
+// close button style
+const closeButton: React.CSSProperties = {
+  float: 'right',
+  marginBottom: '10px',
+  position: 'absolute',
+  top: 10,
+  right: 10,
+  background: require('./close-icon.svg')
 };
 
 export default App;
