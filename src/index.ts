@@ -20,4 +20,4 @@ class ReactWidget extends HTMLElement {
 }
 
 // Register the custom element
-customElements.define('cubie', ReactWidget);
+customElements.define('react-widget', ReactWidget);
