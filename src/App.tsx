@@ -44,8 +44,8 @@ const MiniApp: React.FC<IMiniApp> = ({ closeWidget }) => {
         </svg>
       </button>
       <div style={modalStyle}>
-        <h2>Welcome to the Mini App 2!</h2>
-        <p>This is the content of your app, directly embedded!</p>
+        <h2>Welcome to the Mini App!</h2>
+        <p>This is the content of your app!</p>
       </div>
     </div>
   );
@@ -85,6 +85,9 @@ const closeButton: React.CSSProperties = {
   position: 'absolute',
   top: 10,
   right: 10,
+  backgroundColor: 'transparent',
+  color: 'white',
+  border: 'none',
 };
 
 export default App;
