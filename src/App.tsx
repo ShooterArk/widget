@@ -88,6 +88,7 @@ const closeButton: React.CSSProperties = {
   backgroundColor: 'transparent',
   color: 'white',
   border: 'none',
+  cursor: 'pointer',
 };
 
 export default App;
