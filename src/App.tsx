@@ -37,13 +37,17 @@ interface IMiniApp {
 const MiniApp: React.FC<IMiniApp> = ({ closeWidget }) => {
   return (
     <div style={overlayStyle}>
-    <button onClick={closeWidget} style={closeButton}>
-    </button>
-    <div style={modalStyle}>
-      <h2>Welcome to the Mini App 2!</h2>
-      <p>This is the content of your app, directly embedded!</p>
+      <button onClick={closeWidget} style={closeButton}>
+        <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor">
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
+        </svg>
+      </button>
+      <div style={modalStyle}>
+        <h2>Welcome to the Mini App 2!</h2>
+        <p>This is the content of your app, directly embedded!</p>
+      </div>
     </div>
-  </div>
   );
 };
 
@@ -81,7 +85,6 @@ const closeButton: React.CSSProperties = {
   position: 'absolute',
   top: 10,
   right: 10,
-  background: require('./close-icon.svg')
 };
 
 export default App;
