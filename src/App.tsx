@@ -37,10 +37,10 @@ interface IMiniApp {
 const MiniApp: React.FC<IMiniApp> = ({ closeWidget }) => {
   return (
     <div style={overlayStyle}>
+    <button onClick={closeWidget} style={{ float: 'right', marginBottom: '10px' }}>
+      Close
+    </button>
     <div style={modalStyle}>
-      <button onClick={closeWidget} style={{ float: 'right', marginBottom: '10px' }}>
-        Close
-      </button>
       <h2>Welcome to the Mini App 2!</h2>
       <p>This is the content of your app, directly embedded!</p>
     </div>
