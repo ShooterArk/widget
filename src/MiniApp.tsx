@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import data from './data.json';
 import AnswerSection from './modules/Answermodule/AnswerSection';
+import QuestionField from './modules/Answermodule/QuestionField';
 
 interface MiniAppProps {
   closeWidget: () => void;
@@ -33,16 +34,15 @@ const MiniApp: React.FC<MiniAppProps> = ({ closeWidget }) => {
       </button>
       <div style={modalStyle}>
         <h2>Welcome to the Mini App!</h2>
-        <form onSubmit={handleSearch} style={searchFormStyle}>
-          <input
-            type="text"
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            placeholder="Ask a question..."
-            style={inputStyle}
+        <QuestionField
+            placeholder="Ask a question about your data..."
+            autoFocus
+            onFinish={(value: string) => {
+              // app.setInput(value)
+              // app.obtainAnswer()
+            }}
+            // disabled={app.isThinking}
           />
-          <button type="submit" style={searchButtonStyle}>Search</button>
-        </form>
         {searchResult && (
           <AnswerSection
             answerStr={searchResult.answerStr}
