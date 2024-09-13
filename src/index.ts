@@ -2,6 +2,7 @@ import React from 'react';
 // import ReactDOM from 'react-dom';
 import ReactDOM from 'react-dom/client';
 import App from './App';
+import './index.css'
 
 // Define a custom HTML element <react-widget></react-widget>
 class ReactWidget extends HTMLElement {
