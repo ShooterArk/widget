@@ -1,12 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
+// import MainContent from './MainContent';
+import data from './data.json';
 
 interface MiniAppProps {
   closeWidget: () => void;
 }
 
 const MiniApp: React.FC<MiniAppProps> = ({ closeWidget }) => {
+  const [searchQuery, setSearchQuery] = useState('');
+  const [searchResult, setSearchResult] = useState<string | null>(null);
+
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+    // For now, we'll just use the static data from data.json
+    const result = data.metadata.answer;
+    setSearchResult(result);
+  };
+
   return (
-    <div style={overlayStyle} >
+    <div style={overlayStyle}>
       <button onClick={closeWidget} style={closeButton}>
         <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor">
           <line x1="18" y1="6" x2="6" y2="18" />
@@ -15,12 +27,27 @@ const MiniApp: React.FC<MiniAppProps> = ({ closeWidget }) => {
       </button>
       <div style={modalStyle}>
         <h2>Welcome to the Mini App!</h2>
-        <p>This is the content of your app!</p>
+        <form onSubmit={handleSearch} style={searchFormStyle}>
+          <input
+            type="text"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            placeholder="Ask a question..."
+            style={inputStyle}
+          />
+          <button type="submit" style={searchButtonStyle}>Search</button>
+        </form>
+        {searchResult && (
+          <div style={resultStyle}>
+            <h3>Answer:</h3>
+            <p>{searchResult}</p>
+          </div>
+        )}
+        {/* <MainContent /> */}
       </div>
     </div>
   );
 };
-
 
 // Modal overlay style
 const overlayStyle: React.CSSProperties = {
@@ -59,6 +86,40 @@ const closeButton: React.CSSProperties = {
   color: 'white',
   border: 'none',
   cursor: 'pointer',
+};
+
+// Search form style
+const searchFormStyle: React.CSSProperties = {
+  display: 'flex',
+  marginBottom: '20px',
+};
+
+// Input style
+const inputStyle: React.CSSProperties = {
+  flex: 1,
+  padding: '10px',
+  fontSize: '16px',
+  border: '1px solid #ddd',
+  borderRadius: '4px 0 0 4px',
+};
+
+// Search button style
+const searchButtonStyle: React.CSSProperties = {
+  padding: '10px 20px',
+  fontSize: '16px',
+  backgroundColor: '#007bff',
+  color: 'white',
+  border: 'none',
+  borderRadius: '0 4px 4px 0',
+  cursor: 'pointer',
+};
+
+// Result style
+const resultStyle: React.CSSProperties = {
+  marginTop: '20px',
+  padding: '15px',
+  backgroundColor: '#f0f0f0',
+  borderRadius: '4px',
 };
 
 export default MiniApp;
