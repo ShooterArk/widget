@@ -14,7 +14,7 @@ const MiniApp: React.FC<MiniAppProps> = ({ closeWidget }) => {
         </svg>
       </button>
       <div style={modalStyle}>
-        <h2>Welcome to the Mini App testing!</h2>
+        <h2>Welcome to the Mini App!</h2>
         <p>This is the content of your app!</p>
       </div>
     </div>
