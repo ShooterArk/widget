@@ -122,7 +122,7 @@ const QuestionField: FC<IProps> = observer(({ onFinish, disabled = false, ...res
     <Box className={`${classes.root} queryInputField`}>
       <Box className={classes.inputContainer}>
         <div style={{display:'flex', justifyContent: 'center', alignItems: 'center',
-          width: '100%', border: 1, borderColor: "grey", padding: "2px 5px"
+          width: '100%', border: "1px solid grey", padding: "2px 5px"
         }}>
           <span style={{ width: '100%', zIndex: 2 }}>
             <Input
