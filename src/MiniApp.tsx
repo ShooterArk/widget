@@ -17,12 +17,12 @@ const MiniApp: React.FC<MiniAppProps> = ({ closeWidget }) => {
   const handleSearch = () => {
     // Use the data from data.json
     setSearchResult({
-      answerStr: data.metadata.answer,
-      answerData: data.customers,
-      answerChartData: data.metadata?.chart_data,
-      answerChartHtml: data.metadata?.chart_html,
-      answerInsight: data.metadata?.insight,
-      answerRecommendation: data.metadata.recommendation
+      answerStr: data.data.answer,
+      answerData: data.data.data,
+      answerChartData: data.data?.chart_data,
+      answerChartHtml: data.data?.chart_html,
+      answerInsight: data.data?.insight,
+      answerRecommendation: data.data.recommendation
     });
   };
 
