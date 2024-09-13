@@ -1,7 +1,7 @@
+import React, { useRef } from 'react'
 import { sanitize } from 'isomorphic-dompurify'
 import { FC, useState } from 'react'
 import AnswerTable from './components/AnswerTable'
-import { useRef } from 'react'
 import { observer } from 'mobx-react'
 import HTMLChart from './components/HTMLChart'
 import AnswerChartModal from './components/AnswerChartModal'
