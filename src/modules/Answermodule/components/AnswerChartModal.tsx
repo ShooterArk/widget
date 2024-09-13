@@ -1,4 +1,4 @@
-import { FC, ReactNode } from 'react'
+import React, { FC, ReactNode } from 'react'
 import Modal from 'react-modal'
 import { makeStyles } from '../../../core/utils/theme'
 
