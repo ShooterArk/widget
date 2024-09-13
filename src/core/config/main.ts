@@ -1,5 +1,5 @@
 
-export const DEV = import.meta.env.DEV
+export const DEV = false // import.meta.env.DEV
 
 // Auth-related
 export const AUTH_SVC_BASE_URL = DEV
@@ -33,7 +33,8 @@ export const APP_NAME = 'Cubie'
 export const COOKIE_KEY_USER_EMAIL = 'user_email'
 export const APP_ROOT_PATH = '/'
 
-export const CURRENT_ENV = import.meta.env.DEPLOYMENT_ENV || (
+// import.meta.env.DEPLOYMENT_ENV
+export const CURRENT_ENV = "production" || (
   (AUTH_SVC_BASE_URL.includes('https://auth.')) ? 'production' :
   (AUTH_SVC_BASE_URL.includes('https://auth-demo.')) ? 'demo' :
   (AUTH_SVC_BASE_URL.includes('https://auth-s.')) ? 'staging' :
