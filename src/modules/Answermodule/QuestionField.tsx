@@ -1,100 +1,100 @@
 import { observer } from 'mobx-react'
 import { FC, KeyboardEvent } from 'react'
 import { error } from '../../services/alerts'
-import { makeStyles } from '../../utils/theme'
+// import { makeStyles } from '../../utils/theme'
 // import useApp from '../../hooks/useApp'
 import { Box, Input } from '@mui/material'
 // import { faClose } from '@fortawesome/free-solid-svg-icons'
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import { IconButton } from '@mui/material'
 
-const useStyles = makeStyles()((theme) => ({
-  root: {
-    width: '100%',
-    margin: '12px 0px',
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'flex-start',
-  },
-  inputContainer: {
-    margin: '0 auto',
-    display: 'flex',
-    width: '100%',
-    gap: '2rem',
-    [theme.breakpoints.down('md')]: {
-      width: '100%',
-    },
-  },
-  input: {
-    width: '100%',
-    // borderBottom: `1px solid ${theme.palette.text.disabled}`,
-    // padding: '8px 20px 8px 10px',
-    background: 'transparent',
-    fontSize: theme.typography.body1.fontSize,
-    color: theme.palette.text.primary,
-    outline: 'none',
+// const useStyles = makeStyles()((theme) => ({
+//   root: {
+//     width: '100%',
+//     margin: '12px 0px',
+//     display: 'flex',
+//     flexDirection: 'column',
+//     justifyContent: 'flex-start',
+//   },
+//   inputContainer: {
+//     margin: '0 auto',
+//     display: 'flex',
+//     width: '100%',
+//     gap: '2rem',
+//     [theme.breakpoints.down('md')]: {
+//       width: '100%',
+//     },
+//   },
+//   input: {
+//     width: '100%',
+//     // borderBottom: `1px solid ${theme.palette.text.disabled}`,
+//     // padding: '8px 20px 8px 10px',
+//     background: 'transparent',
+//     fontSize: theme.typography.body1.fontSize,
+//     color: theme.palette.text.primary,
+//     outline: 'none',
 
-    '&:disabled': {
-      color: '#444',
-    },
-  },
-  micButton: {
-    marginLeft: '1%',
-  },
-  questionsContainer: {
-    width: '100%',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    gap: '8px',
-    height: '100%',
-    marginTop: '1.2rem',
-  },
-  questionsMain: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-  },
-  questionInner: {
-    marginTop: '2rem',
-    display: 'grid',
-    gridTemplateColumns: 'repeat(3, minmax(0, 1fr))',
-    gap: '2rem',
-    [theme.breakpoints.down('md')]: {
-      gridTemplateColumns: 'repeat(2, minmax(0, 1fr))',
-      gap: '1.5rem',
-    },
-    [theme.breakpoints.down('sm')]: {
-      gridTemplateColumns: 'repeat(1, minmax(0, 1fr))',
-      gap: '1rem',
-    },
-  },
-  question: {
-    width: '100%',
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    minHeight: '80px',
-    maxHeight: 'max-content',
-    cursor: 'pointer',
-  //borderRadius: '0.25rem',
-    border: `1px solid ${theme.palette.text.disabled}`,
-    color: theme.palette.text.disabled,
-    fontWeight: '400',
-    padding: '1rem',
+//     '&:disabled': {
+//       color: '#444',
+//     },
+//   },
+//   micButton: {
+//     marginLeft: '1%',
+//   },
+//   questionsContainer: {
+//     width: '100%',
+//     display: 'flex',
+//     alignItems: 'center',
+//     justifyContent: 'center',
+//     gap: '8px',
+//     height: '100%',
+//     marginTop: '1.2rem',
+//   },
+//   questionsMain: {
+//     display: 'flex',
+//     flexDirection: 'column',
+//     alignItems: 'center',
+//   },
+//   questionInner: {
+//     marginTop: '2rem',
+//     display: 'grid',
+//     gridTemplateColumns: 'repeat(3, minmax(0, 1fr))',
+//     gap: '2rem',
+//     [theme.breakpoints.down('md')]: {
+//       gridTemplateColumns: 'repeat(2, minmax(0, 1fr))',
+//       gap: '1.5rem',
+//     },
+//     [theme.breakpoints.down('sm')]: {
+//       gridTemplateColumns: 'repeat(1, minmax(0, 1fr))',
+//       gap: '1rem',
+//     },
+//   },
+//   question: {
+//     width: '100%',
+//     display: 'flex',
+//     flexDirection: 'column',
+//     justifyContent: 'center',
+//     minHeight: '80px',
+//     maxHeight: 'max-content',
+//     cursor: 'pointer',
+//   //borderRadius: '0.25rem',
+//     border: `1px solid ${theme.palette.text.disabled}`,
+//     color: theme.palette.text.disabled,
+//     fontWeight: '400',
+//     padding: '1rem',
 
-    '&:hover': {
-      background: theme.palette.primary.main,
-      color: theme.palette.text.secondary,
-      border: `1px solid ${theme.palette.text.secondary}`,
-    },
+//     '&:hover': {
+//       background: theme.palette.primary.main,
+//       color: theme.palette.text.secondary,
+//       border: `1px solid ${theme.palette.text.secondary}`,
+//     },
 
-    '& > p': {
-      margin: 0,
-      textAlign: 'center',
-    },
-  },
-}))
+//     '& > p': {
+//       margin: 0,
+//       textAlign: 'center',
+//     },
+//   },
+// }))
 
 interface IProps {
   onFinish: (value: string) => void
@@ -102,7 +102,8 @@ interface IProps {
   [key: string]: any
 }
 const QuestionField: FC<IProps> = observer(({ onFinish, disabled = false, ...rest }) => {
-  const { classes } = useStyles()
+  // const { classes } = useStyles()
+  const classes: any = {}
   // const app = useApp()
 
   const handleKeyUp = (e: KeyboardEvent<HTMLInputElement>) => {
