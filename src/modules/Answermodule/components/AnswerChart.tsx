@@ -2,8 +2,8 @@ import { Box } from '@mui/material'
 import 'chart.js/auto'
 import { FC, MouseEvent } from 'react'
 import { Bar, Pie, Line, Doughnut } from 'react-chartjs-2'
-import theme, { makeStyles } from '../../../utils/theme'
-import { IChartData } from '../../../types/code_service/IChartData'
+import theme, { makeStyles } from '../../../core/utils/theme'
+import { IChartData } from '../../../core/types/code_service/IChartData'
 
 const useStyles = makeStyles()(() => ({
   root: {

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import data from './data.json';
 import AnswerSection from './modules/Answermodule/AnswerSection';
 import QuestionField from './modules/Answermodule/QuestionField';
+import useApp from './hooks/useApp'
 
 interface MiniAppProps {
   closeWidget: () => void;
@@ -10,6 +11,8 @@ interface MiniAppProps {
 const MiniApp: React.FC<MiniAppProps> = ({ closeWidget }) => {
   const [searchQuery, setSearchQuery] = useState('');
   const [searchResult, setSearchResult] = useState<any | null>(null);
+
+  const app = useApp();
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
@@ -38,12 +41,12 @@ const MiniApp: React.FC<MiniAppProps> = ({ closeWidget }) => {
             placeholder="Ask a question about your data..."
             autoFocus
             onFinish={(value: string) => {
-              // app.setInput(value)
-              // app.obtainAnswer()
+              app.setInput(value)
+              app.obtainAnswer()
             }}
-            // disabled={app.isThinking}
+            disabled={app.isThinking}
           />
-        {/*{searchResult && (
+        {searchResult && (
           <AnswerSection
             answerStr={searchResult.answerStr}
             answerData={searchResult.answerData}
@@ -52,7 +55,7 @@ const MiniApp: React.FC<MiniAppProps> = ({ closeWidget }) => {
             answerInsight={searchResult.answerInsight}
             answerRecommendation={searchResult.answerRecommendation}
           />
-        )} */}
+        )}
       </div>
     </div>
   );

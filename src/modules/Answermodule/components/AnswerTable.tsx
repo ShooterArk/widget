@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import { makeStyles } from '../../../utils/theme'
+import { makeStyles } from '../../../core/utils/theme'
 
 const useStyles = makeStyles()((theme) => ({
   root: {

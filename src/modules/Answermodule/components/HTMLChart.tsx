@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react'
-import { makeStyles } from '../../../utils/theme'
+import { makeStyles } from '../../../core/utils/theme'
 
 
 export interface HTMLChartProps {

@@ -1,6 +1,6 @@
 import { FC, ReactNode } from 'react'
 import Modal from 'react-modal'
-import { makeStyles } from '../../../utils/theme'
+import { makeStyles } from '../../../core/utils/theme'
 
 const useStyles = makeStyles()((theme) => ({
   root: {

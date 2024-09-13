@@ -6,8 +6,8 @@ import { observer } from 'mobx-react'
 import HTMLChart from './components/HTMLChart'
 import AnswerChartModal from './components/AnswerChartModal'
 import AnswerChart from './components/AnswerChart'
-import { IChartData } from '../../types/code_service/IChartData'
-import { makeStyles } from '../../utils/theme'
+import { IChartData } from '../../core/types/code_service/IChartData'
+import { makeStyles } from '../../core/utils/theme'
 
 // Icon
 // import ViewIcon from '../../../assets/Svgs/action/view_24 px.svg';
