@@ -1,8 +1,12 @@
 import React from 'react';
 
-const MiniApp: React.FC<IMiniApp> = ({ closeWidget }) => {
+interface MiniAppProps {
+  closeWidget: () => void;
+}
+
+const MiniApp: React.FC<MiniAppProps> = ({ closeWidget }) => {
   return (
-    <div style={overlayStyle}>
+    <div style={overlayStyle} >
       <button onClick={closeWidget} style={closeButton}>
         <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor">
           <line x1="18" y1="6" x2="6" y2="18" />
@@ -10,7 +14,7 @@ const MiniApp: React.FC<IMiniApp> = ({ closeWidget }) => {
         </svg>
       </button>
       <div style={modalStyle}>
-        <h2>Welcome to the Mini App!</h2>
+        <h2>Welcome to the Mini App testing!</h2>
         <p>This is the content of your app!</p>
       </div>
     </div>

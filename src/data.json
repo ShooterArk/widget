@@ -1,0 +1,40 @@
+{
+  "customers": [
+    {
+      "customerNumber": 1,
+      "customerId": "DD37Cf93aecA6Dc",
+      "firstName": "Sheryl",
+      "lastName": "Baxter",
+      "companyName": "Rasmussen Group",
+      "city": "East Leonard",
+      "country": "Chile",
+      "primaryPhone": "229.1.5154",
+      "secondaryPhone": "397.9.0519x718",
+      "emailAddress": "zunigavanessa@smith.info",
+      "subscriptionDate": "2020-08-24",
+      "websiteUrl": "http://www.stephenson.com/"
+    },
+    {
+      "customerNumber": 2,
+      "customerId": "1Ef7b82A4CAAD10",
+      "firstName": "Preston",
+      "lastName": "Lozano",
+      "companyName": "Vega-Gentry",
+      "city": "East Jimmychester",
+      "country": "Djibouti",
+      "primaryPhone": "5153435776",
+      "secondaryPhone": "686-620-1820x944",
+      "emailAddress": "vmata@colon.com",
+      "subscriptionDate": "2021-04-23",
+      "websiteUrl": "http://www.hobbs.com/"
+    }
+  ],
+  "metadata": {
+    "question": "List first 2 customers",
+    "answer": "This table displays detailed information for the first two customers, including personal details, contact information, and subscription data.",
+    "insight": "The first two customers listed are Sheryl Baxter from Chile associated with Rasmussen Group and Preston Lozano from Djibouti associated with Vega-Gentry, with their subscriptions starting on August 24, 2020, and April 23, 2021, respectively.",
+    "queryId": "k12l92hd6t",
+    "answeredAt": "2024-09-13T04:37:21.045199+00:00",
+    "runtime": 17.147972106933594
+  }
+}
