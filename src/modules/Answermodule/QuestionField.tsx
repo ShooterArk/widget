@@ -1,3 +1,4 @@
+import React from 'react';
 import { observer } from 'mobx-react'
 import { FC, KeyboardEvent } from 'react'
 import { error } from '../../services/alerts'
