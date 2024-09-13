@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import data from './data.json';
+import data from './assets/data.json';
 import AnswerSection from './modules/Answermodule/AnswerSection';
 import QuestionField from './modules/Answermodule/QuestionField';
 import useApp from './hooks/useApp'
@@ -14,8 +14,7 @@ const MiniApp: React.FC<MiniAppProps> = ({ closeWidget }) => {
 
   const app = useApp();
 
-  const handleSearch = (e: React.FormEvent) => {
-    e.preventDefault();
+  const handleSearch = () => {
     // Use the data from data.json
     setSearchResult({
       answerStr: data.metadata.answer,
@@ -43,6 +42,7 @@ const MiniApp: React.FC<MiniAppProps> = ({ closeWidget }) => {
             onFinish={(value: string) => {
               app.setInput(value)
               app.obtainAnswer()
+              handleSearch();
             }}
             disabled={app.isThinking}
           />
