@@ -1,6 +1,14 @@
 import { error } from '../services/alerts'
 import { DATACAKES_CODE_SERVICE_URL, DATACAKES_SOURCE_SERVICE_URL, LOGIN_URL } from '../config/main'
 import { IDataObject } from '../types/source_service/IDataObject'
+// Icons
+import BIGQUERY from '../../assets/Svgs/datasources/Bigquery.svg'
+import CSV from '../../assets/Svgs/datasources/CSV.svg'
+import SNOWFLAKE from '../../assets/Svgs/datasources/Snowflake.svg'
+import META from '../../assets/Svgs/datasources/Meta.svg'
+import GOOGLEADS from '../../assets/Svgs/datasources/google-ads.svg'
+import GOOGLEANALYTICS from '../../assets/Svgs/datasources/google-analytics.svg'
+import DATACAKES from '../../assets/datacakes-sq.png'
 
 export const redirectFromStandaloneUrl = (): boolean => {
   const urlParams = new URLSearchParams(window.location.search)
@@ -136,15 +144,6 @@ export function a11yProps(index: number) {
     'aria-controls': `full-width-tabpanel-${index}`,
   };
 }
-
-// Icons
-import BIGQUERY from '../../assets/Svgs/datasources/Bigquery.svg'
-import CSV from '../../assets/Svgs/datasources/CSV.svg'
-import SNOWFLAKE from '../../assets/Svgs/datasources/Snowflake.svg'
-import META from '../../assets/Svgs/datasources/Meta.svg'
-import GOOGLEADS from '../../assets/Svgs/datasources/google-ads.svg'
-import GOOGLEANALYTICS from '../../assets/Svgs/datasources/google-analytics.svg'
-import DATACAKES from '../../assets/datacakes-sq.png'
 
 export const getDataServiceIcon = (dataService: string) => {
   switch (dataService) {
