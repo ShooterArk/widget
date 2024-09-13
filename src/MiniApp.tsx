@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-// import MainContent from './MainContent';
 import data from './data.json';
+import AnswerSection from './modules/Answermodule/AnswerSection';
 
 interface MiniAppProps {
   closeWidget: () => void;
@@ -8,13 +8,19 @@ interface MiniAppProps {
 
 const MiniApp: React.FC<MiniAppProps> = ({ closeWidget }) => {
   const [searchQuery, setSearchQuery] = useState('');
-  const [searchResult, setSearchResult] = useState<string | null>(null);
+  const [searchResult, setSearchResult] = useState<any | null>(null);
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
-    // For now, we'll just use the static data from data.json
-    const result = data.metadata.answer;
-    setSearchResult(result);
+    // Use the data from data.json
+    setSearchResult({
+      answerStr: data.metadata.answer,
+      answerData: data.customers,
+      answerChartData: data.metadata?.chart_data,
+      answerChartHtml: data.metadata?.chart_html,
+      answerInsight: data.metadata?.insight,
+      answerRecommendation: data.metadata.recommendation
+    });
   };
 
   return (
@@ -38,12 +44,15 @@ const MiniApp: React.FC<MiniAppProps> = ({ closeWidget }) => {
           <button type="submit" style={searchButtonStyle}>Search</button>
         </form>
         {searchResult && (
-          <div style={resultStyle}>
-            <h3>Answer:</h3>
-            <p>{searchResult}</p>
-          </div>
+          <AnswerSection
+            answerStr={searchResult.answerStr}
+            answerData={searchResult.answerData}
+            answerChartData={searchResult.answerChartData}
+            answerChartHtml={searchResult.answerChartHtml}
+            answerInsight={searchResult.answerInsight}
+            answerRecommendation={searchResult.answerRecommendation}
+          />
         )}
-        {/* <MainContent /> */}
       </div>
     </div>
   );

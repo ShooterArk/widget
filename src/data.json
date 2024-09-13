@@ -35,6 +35,12 @@
     "insight": "The first two customers listed are Sheryl Baxter from Chile associated with Rasmussen Group and Preston Lozano from Djibouti associated with Vega-Gentry, with their subscriptions starting on August 24, 2020, and April 23, 2021, respectively.",
     "queryId": "k12l92hd6t",
     "answeredAt": "2024-09-13T04:37:21.045199+00:00",
-    "runtime": 17.147972106933594
+    "runtime": 17.147972106933594,
+    "chart_data": [
+      { "label": "Customer 1", "value": 100 },
+      { "label": "Customer 2", "value": 150 }
+    ],
+    "chart_html": "<div id='chart'></div>",
+    "recommendation": "Consider reaching out to these customers for feedback on their experience so far."
   }
 }
