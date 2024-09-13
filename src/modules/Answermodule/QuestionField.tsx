@@ -117,10 +117,11 @@ const QuestionField: FC<IProps> = observer(({ onFinish, disabled = false, ...res
     // }
   }
 
+  // className='flex justify-center items-center w-full border border-gray-500 px-5 py-2'
   return (
     <Box className={`${classes.root} queryInputField`}>
       <Box className={classes.inputContainer}>
-        <div className='flex justify-center items-center w-full border border-gray-500 px-5 py-2'>
+        <div >
           <span
             style={{ width: '100%', zIndex: 2 }}
           >
