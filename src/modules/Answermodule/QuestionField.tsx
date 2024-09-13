@@ -2,12 +2,12 @@ import React from 'react';
 import { observer } from 'mobx-react'
 import { FC, KeyboardEvent } from 'react'
 import { error } from '../../services/alerts'
-import { makeStyles } from '../../utils/theme'
-// import useApp from '../../hooks/useApp'
+import { makeStyles } from '../../core/utils/theme'
+import useApp from '../../hooks/useApp'
 import { Box, Input } from '@mui/material'
-// import { faClose } from '@fortawesome/free-solid-svg-icons'
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-// import { IconButton } from '@mui/material'
+import { faClose } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { IconButton } from '@mui/material'
 
 const useStyles = makeStyles()((theme) => ({
   root: {
@@ -104,17 +104,17 @@ interface IProps {
 }
 const QuestionField: FC<IProps> = observer(({ onFinish, disabled = false, ...rest }) => {
   const { classes } = useStyles()
-  // const app = useApp()
+  const app = useApp()
 
   const handleKeyUp = (e: KeyboardEvent<HTMLInputElement>) => {
-    // const value = app.input.trim() || ''
-    // if (e.key === 'Enter' && value.length > 0) {
-    //   if (app.isInitializing) {
-    //     error('Please wait until tables are loaded')
-    //     return;
-    //   }
-    //   onFinish(value)
-    // }
+    const value = app.input.trim() || ''
+    if (e.key === 'Enter' && value.length > 0) {
+      if (app.isInitializing) {
+        error('Please wait until tables are loaded')
+        return;
+      }
+      onFinish(value)
+    }
   }
 
   // className='flex justify-center items-center w-full border border-gray-500 px-5 py-2'
@@ -126,12 +126,12 @@ const QuestionField: FC<IProps> = observer(({ onFinish, disabled = false, ...res
         }}>
           <span style={{ width: '100%', zIndex: 2 }}>
             <Input
-              // value={app.input}
+              value={app.input}
               onChange={(e) => {
                 // Remove all the newlines from the query
                 // remove \r and \n for windows/mac osx
                 const query = e.target.value.replace(/[\r\n]/gm, ''); 
-                // app.setInput(query);
+                app.setInput(query);
               }}
               type="text"
               disableUnderline
@@ -148,7 +148,7 @@ const QuestionField: FC<IProps> = observer(({ onFinish, disabled = false, ...res
             />
           </span>
 
-          {/* <Box className={classes.micButton}>
+          <Box className={classes.micButton}>
             {!app.isThinking ? (
               null
             ) : (
@@ -156,7 +156,7 @@ const QuestionField: FC<IProps> = observer(({ onFinish, disabled = false, ...res
                 <FontAwesomeIcon icon={faClose} />
               </IconButton>
             )}
-          </Box> */}
+          </Box>
         </div>
       </Box>
     </Box>

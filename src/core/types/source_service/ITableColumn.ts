@@ -1,4 +1,4 @@
-export interface ITableColumn {
+interface ITableColumn {
   name: string
   type: 'TIMESTAMP' | 'STRING' | 'FLOAT' | any
   description: string | null
