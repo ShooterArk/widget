@@ -34,7 +34,7 @@ const MiniApp: React.FC<MiniAppProps> = ({ closeWidget }) => {
       </button>
       <div style={modalStyle}>
         <h2>Welcome to the Mini App!</h2>
-        {/* <QuestionField
+         <QuestionField
             placeholder="Ask a question about your data..."
             autoFocus
             onFinish={(value: string) => {
@@ -43,7 +43,7 @@ const MiniApp: React.FC<MiniAppProps> = ({ closeWidget }) => {
             }}
             // disabled={app.isThinking}
           />
-        {searchResult && (
+        {/*{searchResult && (
           <AnswerSection
             answerStr={searchResult.answerStr}
             answerData={searchResult.answerData}
