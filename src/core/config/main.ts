@@ -1,5 +1,5 @@
 
-export const DEV = false // import.meta.env.DEV
+export const DEV = true // import.meta.env.DEV
 
 // Auth-related
 export const AUTH_SVC_BASE_URL = DEV
