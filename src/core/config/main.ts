@@ -1,6 +1,8 @@
 
 export const DEV = true // import.meta.env.DEV
 
+
+
 // Auth-related
 export const AUTH_SVC_BASE_URL = DEV
   ? 'http://app-local.datacakes.ai:5004'
@@ -14,9 +16,7 @@ export const CONNECT_URL = (service: string) => {
 export const DISCONNECT_URL = AUTH_SVC_BASE_URL + '/disconnect'
 
 // Backend server URLs
-export const DATACAKES_CODE_SERVICE_URL = DEV
-  ? 'http://app-local.datacakes.ai:5002'
-  : 'CODE_SERVICE_URL_REPLACEMENT_STRING'
+export const DATACAKES_CODE_SERVICE_URL = 'https://api.datacakes.ai';
 export const DATACAKES_SOURCE_SERVICE_URL = DEV
   ? 'http://app-local.datacakes.ai:5003'
   : 'SOURCE_SERVICE_URL_REPLACEMENT_STRING'
