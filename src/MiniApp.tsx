@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import data from './assets/data.json';
 import AnswerSection from './modules/Answermodule/AnswerSection';
 import QuestionField from './modules/Answermodule/QuestionField';
@@ -6,13 +6,21 @@ import useApp from './hooks/useApp'
 
 interface MiniAppProps {
   closeWidget: () => void;
+  cakeId: string;
 }
 
-const MiniApp: React.FC<MiniAppProps> = ({ closeWidget }) => {
+const MiniApp: React.FC<MiniAppProps> = ({ closeWidget, cakeId }) => {
   const [searchQuery, setSearchQuery] = useState('');
   const [searchResult, setSearchResult] = useState<any | null>(null);
 
   const app = useApp();
+
+  useEffect(() => {
+    if (cakeId) {
+      app.setCakeId(cakeId);
+      app.updateSources();
+    }
+  }, [cakeId])
 
   const handleSearch = () => {
     // Use the data from data.json

@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
 import MiniApp from './MiniApp';
 import { AppContext } from './contexts/AppContext'
@@ -19,8 +19,6 @@ interface IApp {
 const App: FC<IApp> = ({cakeId}) => {
   const [isWidgetOpen, setIsWidgetOpen] = useState(false);
 
-  console.log('cakeId is',cakeId);
-
   const handleButtonClick = () => {
     setIsWidgetOpen(!isWidgetOpen);
   };
@@ -33,7 +31,7 @@ const App: FC<IApp> = ({cakeId}) => {
             <button onClick={handleButtonClick} style={buttonStyle}>
               Open Widget
             </button>
-            {isWidgetOpen && ReactDOM.createPortal(<MiniApp closeWidget={handleButtonClick} />, document.body)}
+            {isWidgetOpen && ReactDOM.createPortal(<MiniApp cakeId={cakeId} closeWidget={handleButtonClick} />, document.body)}
           </div>
         </SettingsContext.Provider>
       </AppContext.Provider>
