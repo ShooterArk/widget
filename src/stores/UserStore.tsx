@@ -7,7 +7,7 @@ import {
   LOGIN_URL,
   LOGOUT_URL
 } from '../core/config/main'
-import { info } from '../services/alerts'
+import { info } from '../core/services/alerts'
 import { isEndUserView } from '../core/utils/main'
 
 export class UserStore {

@@ -12,8 +12,10 @@ const userStore = new UserStore()
 const appStore = new AppStore()
 const settingsStore = new SettingsStore(appStore)
 
-function App() {
+function App(cakeId: string) {
   const [isWidgetOpen, setIsWidgetOpen] = useState(false);
+
+  console.log('cakeId is',cakeId);
 
   const handleButtonClick = () => {
     setIsWidgetOpen(!isWidgetOpen);

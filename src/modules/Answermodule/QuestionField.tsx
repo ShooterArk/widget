@@ -1,7 +1,7 @@
 import React from 'react';
 import { observer } from 'mobx-react'
 import { FC, KeyboardEvent } from 'react'
-import { error } from '../../services/alerts'
+import { error } from '../../core/services/alerts'
 import { makeStyles } from '../../core/utils/theme'
 import useApp from '../../hooks/useApp'
 import { Box, Input } from '@mui/material'
