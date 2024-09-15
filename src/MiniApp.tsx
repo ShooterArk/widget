@@ -50,7 +50,7 @@ const MiniApp: React.FC<MiniAppProps> = ({ closeWidget, cakeId }) => {
           onFinish={(value: string) => {
             app.setInput(value)
             app.obtainAnswer()
-            handleSearch();
+            // handleSearch();
           }}
           disabled={app.isThinking}
         />
