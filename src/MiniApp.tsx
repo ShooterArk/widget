@@ -46,7 +46,7 @@ const MiniApp: React.FC<MiniAppProps> = ({ closeWidget }) => {
           }}
           disabled={app.isThinking}
         />
-        <div style={{overflow: 'auto'}}>
+        <div style={{overflow: 'auto', minHeight: '84%'}}>
           {searchResult && (
             <AnswerSection
               answerStr={searchResult.answerStr}
