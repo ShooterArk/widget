@@ -3,13 +3,14 @@ import data from './assets/data.json';
 import AnswerSection from './modules/Answermodule/AnswerSection';
 import QuestionField from './modules/Answermodule/QuestionField';
 import useApp from './hooks/useApp'
+import { observer } from 'mobx-react'
 
 interface MiniAppProps {
   closeWidget: () => void;
   cakeId: string;
 }
 
-const MiniApp: React.FC<MiniAppProps> = ({ closeWidget, cakeId }) => {
+const MiniApp: React.FC<MiniAppProps> = observer(({ closeWidget, cakeId }) => {
   const [searchQuery, setSearchQuery] = useState('');
   const [searchResult, setSearchResult] = useState<any | null>(null);
 
@@ -69,7 +70,7 @@ const MiniApp: React.FC<MiniAppProps> = ({ closeWidget, cakeId }) => {
       </div>
     </div>
   );
-};
+});
 
 // Modal overlay style
 const overlayStyle: React.CSSProperties = {
