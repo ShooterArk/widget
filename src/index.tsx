@@ -6,22 +6,21 @@ import App from './App';
 
 // Define a custom HTML element <react-widget></react-widget>
 class ReactWidget extends HTMLElement {
+  
   connectedCallback() {
+    const cakeId = this.getAttribute('cakeId') || '';
+
     // Create a shadow root for encapsulating styles
     const mountPoint = document.createElement('div');
     mountPoint.id = 'react-widget-container';
     document.body.appendChild(mountPoint);
     // this.attachShadow({ mode: 'open' }).appendChild(mountPoint);
 
-    // Render the React widget inside the shadow DOM
-    const props = {
-      cakeId: this.getAttribute('cakeId'),
-    };
     const root = ReactDOM.createRoot(mountPoint);
     // root.render(React.createElement(App, props));
     root.render(
       <React.StrictMode>
-        <App cakeId={this.getAttribute('cakeId') ?? ''} />
+        <App cakeId={cakeId} />
       </React.StrictMode>
     );
     // root.render(React.createElement(App));
