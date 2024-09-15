@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { FC, useState } from 'react';
 import ReactDOM from 'react-dom';
 import MiniApp from './MiniApp';
 import { AppContext } from './contexts/AppContext'
@@ -12,7 +12,11 @@ const userStore = new UserStore()
 const appStore = new AppStore()
 const settingsStore = new SettingsStore(appStore)
 
-function App(cakeId: string) {
+interface IApp {
+  cakeId: string;
+}
+
+const App: FC<IApp> = ({cakeId}) => {
   const [isWidgetOpen, setIsWidgetOpen] = useState(false);
 
   console.log('cakeId is',cakeId);
@@ -48,9 +52,5 @@ const buttonStyle: React.CSSProperties = {
   borderRadius: '5px',
   cursor: 'pointer',
 };
-
-interface IMiniApp {
-  closeWidget: () => void
-}
 
 export default App;
