@@ -54,15 +54,15 @@ const MiniApp: React.FC<MiniAppProps> = ({ closeWidget, cakeId }) => {
           }}
           disabled={app.isThinking}
         />
-        <div style={{overflow: 'auto', minHeight: '84%'}}>
-          {searchResult && (
+        <div style={{ overflow: 'auto', minHeight: '84%' }}>
+          {app.answerText && (
             <AnswerSection
-              answerStr={searchResult.answerStr}
-              answerData={searchResult.answerData}
-              answerChartData={searchResult.answerChartData}
-              answerChartHtml={searchResult.answerChartHtml}
-              answerInsight={searchResult.answerInsight}
-              answerRecommendation={searchResult.answerRecommendation}
+              answerStr={app.answerText}
+              answerData={app.answerData}
+              answerChartData={app.answerChartData}
+              answerChartHtml={app.answerChartHtml}
+              answerInsight={app.answerInsight}
+              answerRecommendation={app.answerRecommendation}
             />
           )}
         </div>
