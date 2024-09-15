@@ -184,7 +184,6 @@ export class AppStore {
     this._collapsed = false
 
     if (response.status == 'ok') {
-      console.log('Response is okay');
       this.answerText = response.data.answer ?? ''
       this.answerInsight = response.data.insight ?? ''
       this.answerRecommendation = response.data.recommendation ?? ''
@@ -202,7 +201,6 @@ export class AppStore {
       this.chatHistory = [this.question, this.answerText]
       this.cancelRequest = null
     } else if (response.status == 'error') {
-      console.log('there was an error');
       this.input = ''
       this.question = ''
       this.answerText = ''
