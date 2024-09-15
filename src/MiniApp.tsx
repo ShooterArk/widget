@@ -36,26 +36,28 @@ const MiniApp: React.FC<MiniAppProps> = ({ closeWidget }) => {
       </button>
       <div style={modalStyle}>
         <h2>Welcome to the Mini App!</h2>
-         <QuestionField
-            placeholder="Ask a question about your data..."
-            autoFocus
-            onFinish={(value: string) => {
-              app.setInput(value)
-              app.obtainAnswer()
-              handleSearch();
-            }}
-            disabled={app.isThinking}
-          />
-        {searchResult && (
-          <AnswerSection
-            answerStr={searchResult.answerStr}
-            answerData={searchResult.answerData}
-            answerChartData={searchResult.answerChartData}
-            answerChartHtml={searchResult.answerChartHtml}
-            answerInsight={searchResult.answerInsight}
-            answerRecommendation={searchResult.answerRecommendation}
-          />
-        )}
+        <QuestionField
+          placeholder="Ask a question about your data..."
+          autoFocus
+          onFinish={(value: string) => {
+            app.setInput(value)
+            app.obtainAnswer()
+            handleSearch();
+          }}
+          disabled={app.isThinking}
+        />
+        <div style={{overflow: 'auto'}}>
+          {searchResult && (
+            <AnswerSection
+              answerStr={searchResult.answerStr}
+              answerData={searchResult.answerData}
+              answerChartData={searchResult.answerChartData}
+              answerChartHtml={searchResult.answerChartHtml}
+              answerInsight={searchResult.answerInsight}
+              answerRecommendation={searchResult.answerRecommendation}
+            />
+          )}
+        </div>
       </div>
     </div>
   );
